@@ -19,7 +19,7 @@ resource "aws_cloudfront_distribution" "default" {
       connection_timeout  = 3
       connection_attempts = 2
       dynamic "custom_origin_config" {
-        for_each = origin.value["bucket_name"] != null ? [] : [0] 
+        for_each = origin.value["bucket_name"] != null ? [] : [0]
         content {
           http_port              = coalesce(origin.value["port"], local.custom_origin_config["http_port"])
           https_port             = coalesce(origin.value["port"], local.custom_origin_config["https_port"])
@@ -102,12 +102,12 @@ locals {
       "1"   = "TLSv1"
     }
     # Nobody uses TLS 1.1 :-)
-    ssl_protocols = ["TLSv1.2", "TLSv1"]  
+    ssl_protocols = ["TLSv1.2", "TLSv1"]
   }
   path_patterns = flatten([
     for b in var.behaviors : [
       for p in b.paths : [{
-        path = p
+        path   = p
         origin = b.origin
       }]
     ]

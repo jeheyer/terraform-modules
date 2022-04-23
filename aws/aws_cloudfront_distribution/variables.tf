@@ -20,12 +20,12 @@ variable "error_pages" {
 }
 variable "origins" {
   type = map(object({
-    dns_name      = optional(string)
-    port          = optional(number)
-    protocol      = optional(string)
-    tls_version   = optional(number)
-    path          = optional(string)
-    bucket_name   = optional(string)
+    dns_name    = optional(string)
+    port        = optional(number)
+    protocol    = optional(string)
+    tls_version = optional(number)
+    path        = optional(string)
+    bucket_name = optional(string)
   }))
   default = {
     default = {
@@ -43,7 +43,7 @@ variable "default_origin" {
 variable "behaviors" {
   type = list(object({
     #path   = string
-    paths   = list(string)
+    paths  = list(string)
     origin = string
   }))
   default = []
