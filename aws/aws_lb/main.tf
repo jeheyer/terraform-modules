@@ -1,4 +1,4 @@
-resource "aws_lb" "LB" {
+resource "aws_lb" "default" {
   name               = var.name
   internal           = var.internal
   load_balancer_type = var.type
