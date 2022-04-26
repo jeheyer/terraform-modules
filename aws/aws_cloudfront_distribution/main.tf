@@ -12,7 +12,6 @@ resource "aws_cloudfront_distribution" "default" {
   dynamic "origin" {
     for_each = var.origins
     content {
-      #origin_id           = origin.value["bucket_name"] != null ? "S3-${origin.value["bucket_name"]}" : origin.key
       origin_id           = origin.key
       domain_name         = origin.value["bucket_name"] != null ? "${origin.value["bucket_name"]}.s3.amazonaws.com" : origin.value["dns_name"]
       origin_path         = origin.value["path"]
@@ -34,8 +33,9 @@ resource "aws_cloudfront_distribution" "default" {
   dynamic "ordered_cache_behavior" {
     for_each = local.path_patterns
     content {
-      path_pattern     = local.path_patterns[ordered_cache_behavior.key].path
-      allowed_methods  = ["GET", "HEAD", "OPTIONS"]
+      path_pattern = local.path_patterns[ordered_cache_behavior.key].path
+      #allowed_methods  = ["GET", "HEAD", "OPTIONS"]
+      allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
       cached_methods   = ["GET", "HEAD"]
       target_origin_id = local.path_patterns[ordered_cache_behavior.key].origin
       forwarded_values {
