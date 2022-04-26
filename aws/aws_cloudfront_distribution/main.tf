@@ -37,7 +37,7 @@ resource "aws_cloudfront_distribution" "default" {
       #allowed_methods  = ["GET", "HEAD", "OPTIONS"]
       #allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
       allowed_methods  = local.path_patterns[ordered_cache_behavior.key].allowed_methods
-      cached_methods   = local.cached_methods
+      cached_methods   = local.path_patterns[ordered_cache_behavior.key].cached_methods
       target_origin_id = local.path_patterns[ordered_cache_behavior.key].origin
       forwarded_values {
         headers      = ["Origin"]
@@ -111,6 +111,7 @@ locals {
         path            = p
         origin          = b.origin
         allowed_methods = coalesce(b.allowed_methods, local.allowed_methods)
+        cached_methods = coalesce(b.cached_methods, local.cached_methods)
       }]
     ]
   ])
