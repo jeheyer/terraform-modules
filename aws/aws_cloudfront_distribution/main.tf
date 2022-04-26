@@ -35,7 +35,8 @@ resource "aws_cloudfront_distribution" "default" {
     content {
       path_pattern = local.path_patterns[ordered_cache_behavior.key].path
       #allowed_methods  = ["GET", "HEAD", "OPTIONS"]
-      allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
+      #allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
+      allowed_methods  = local.path_patterns[ordered_cache_behavior.key].allowed_methods
       cached_methods   = ["GET", "HEAD"]
       target_origin_id = local.path_patterns[ordered_cache_behavior.key].origin
       forwarded_values {
@@ -107,8 +108,9 @@ locals {
   path_patterns = flatten([
     for b in var.behaviors : [
       for p in b.paths : [{
-        path   = p
-        origin = b.origin
+        path            = p
+        origin          = b.origin
+        allowed_methods = coalesce(b.allowed_methods, ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"])
       }]
     ]
   ])

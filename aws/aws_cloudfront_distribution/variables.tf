@@ -43,8 +43,9 @@ variable "default_origin" {
 variable "behaviors" {
   type = list(object({
     #path   = string
-    paths  = list(string)
-    origin = string
+    paths           = list(string)
+    origin          = string
+    allowed_methods = optional(list(string))
   }))
   default = []
 }
