@@ -1,5 +1,5 @@
 resource "google_compute_service_attachment" "default" {
-  count                 = var.name != null : 1 : 0
+  count                 = var.name != null ? 1 : 0
   name                  = var.name
   region                = var.region
   description           = var.description
