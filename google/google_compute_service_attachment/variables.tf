@@ -13,7 +13,7 @@ variable "region" {
 }
 variable "nat_subnet_ids" {
   description = "NAT subnets for this region"
-  type = list(string)
+  type        = list(string)
 }
 variable "target_service_id" {
   description = "Load Balancer Service ID to publish "
