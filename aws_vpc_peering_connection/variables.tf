@@ -38,7 +38,7 @@ variable "create_peering" {
 variable "auto_accept" {
   description = "Auto accept peering connection"
   type        = bool
-  default     = false
+  default     = null
 }
 variable "tags" {
   type = map(string)
