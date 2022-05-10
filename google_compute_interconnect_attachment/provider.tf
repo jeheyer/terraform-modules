@@ -5,4 +5,6 @@ terraform {
       source = "hashicorp/google"
     }
   }
+  experiments = [module_variable_optional_attrs]
 }
+

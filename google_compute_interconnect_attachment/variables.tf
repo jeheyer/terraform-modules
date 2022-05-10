@@ -6,6 +6,11 @@ variable "project_id" {
 variable "name" {
   description = "Name of Interconnect Attachment"
   type        = string
+  default = null
+}
+variable "name_prefix" {
+  description = "Name of Interconnect Attachment"
+  type        = string
 }
 variable "description" {
   description = "Description of Interconnect Attachment"
@@ -25,6 +30,10 @@ variable "region" {
   type    = string
   default = null
 }
+variable "encryption" {
+  type    = string
+  default = "NONE"
+}
 variable "vpc_network_name" {
   description = "Name of the VPC Network"
   type        = string
@@ -35,16 +44,27 @@ variable "cloud_router_name" {
   type        = string
   default     = null
 }
-variable "mtu" {
-  description = "MTU for the attachment"
-  type        = number
-  default     = null
-  validation {
-    condition     = var.mtu == null || var.mtu == 1440 || var.mtu == 1500
-    error_message = "If specified, MTU must be 1440 or 1500."
-  }
+#variable "mtu" {
+#  description = "MTU for the attachment"
+#  type        = number
+#  default     = null
+#  validation {
+#    condition     = var.mtu == null || var.mtu == 1440 || var.mtu == 1500
+#    error_message = "If specified, MTU must be 1440 or 1500."
+#  }
+#}
+#variable "enabled" {
+#  type    = bool
+#  default = true
+#}
+
+variable "circuits" {
+  type = list(object({
+    attachment        = optional(string)
+    description = optional(string)
+    mtu         = optional(number)
+    enabled     = optional(bool)
+  }))
+  description = "Parameters for each Circuit"
 }
-variable "enabled" {
-  type    = bool
-  default = true
-}
+
