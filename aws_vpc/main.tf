@@ -1,4 +1,4 @@
-resource "aws_vpc" "VPC" {
+resource "aws_vpc" "default" {
   cidr_block = var.cidr_block
 }
 

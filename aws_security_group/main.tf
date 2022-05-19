@@ -1,4 +1,4 @@
-resource "aws_security_group" "SECURITY_GROUP" {
+resource "aws_security_group" "default" {
   name            = var.name
   vpc_id          = var.vpc_id
   dynamic "ingress" {

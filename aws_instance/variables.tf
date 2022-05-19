@@ -14,3 +14,6 @@ variable "eni_ids" {
   type    = list(string)
   default = []
 }
+variable "key_name" {
+  type    = string
+}
