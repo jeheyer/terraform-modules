@@ -111,7 +111,7 @@ locals {
         path            = p
         origin          = b.origin
         allowed_methods = coalesce(b.allowed_methods, local.allowed_methods)
-        cached_methods = coalesce(b.cached_methods, local.cached_methods)
+        cached_methods  = coalesce(b.cached_methods, local.cached_methods)
       }]
     ]
   ])

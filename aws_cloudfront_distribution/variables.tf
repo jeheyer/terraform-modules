@@ -46,6 +46,7 @@ variable "behaviors" {
     paths           = list(string)
     origin          = string
     allowed_methods = optional(list(string))
+    cached_methods  = optional(list(string))
   }))
   default = []
 }
