@@ -5,10 +5,14 @@ variable "cidr_block" {
   type = string
 }
 variable "az" {
-  type = string
+  type    = string
   default = null
 }
-variable "tag" {
-  type = string
+variable "name" {
+  type    = string
   default = null
+}
+variable "tags" {
+  type    = map(string)
+  default = {}
 }
