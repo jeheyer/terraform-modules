@@ -2,7 +2,7 @@ variable "route_table_id" {
   type = string
 }
 variable "routes" {
-  type = list(string)
+  type    = list(string)
   default = []
 }
 variable "target" {
