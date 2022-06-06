@@ -1,4 +1,4 @@
-output "id" {
-  value = aws_vpn_gateway.default.id
+output "ids" {
+  value = aws_vpn_gateway.default.*.id
 }
 
