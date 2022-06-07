@@ -8,7 +8,7 @@ output "ip_ranges" {
   value = google_compute_router_interface.default.*.ip_range
 }
 
-output "router_interface" {
+output "router_interfaces" {
   value = {
     "names"     = google_compute_router_interface.default.*.name
     "ids"       = google_compute_router_interface.default.*.id

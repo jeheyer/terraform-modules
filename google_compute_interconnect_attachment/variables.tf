@@ -15,10 +15,16 @@ variable "type" {
 variable "name_prefix" {
   description = "Name of Interconnect Attachment"
   type        = string
+  default     = null
+}
+variable "vpc_network_name" {
+  description = "Name of the VPC Network"
+  type        = string
+  default     = "default"
 }
 variable "region" {
-  type    = string
-  default = null
+  description = "GCP Region name"
+  type        = string
 }
 variable "cloud_router_name" {
   description = "Name of the Cloud Router"

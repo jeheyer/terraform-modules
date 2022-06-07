@@ -1,4 +1,4 @@
-resource "google_compute_security_policy" "CLOUDARMOR_POLICY" {
+resource "google_compute_security_policy" "default" {
   name    = var.name
   project = var.project_id
   dynamic "rule" {

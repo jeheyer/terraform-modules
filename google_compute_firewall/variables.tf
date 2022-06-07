@@ -16,6 +16,10 @@ variable "enable_logging" {
   type    = bool
   default = false
 }
+variable "direction" {
+  type    = string
+  default = null
+}
 variable "source_ranges" {
   type    = list(string)
   default = null
@@ -24,7 +28,11 @@ variable "destination_ranges" {
   type    = list(string)
   default = null
 }
-variable "network_tags" {
+variable "source_tags" {
+  type    = list(string)
+  default = null
+}
+variable "target_tags" {
   type    = list(string)
   default = null
 }
@@ -45,3 +53,12 @@ variable "allow" {
     }
   ]
 }
+variable "deny" {
+  description = "List of protcols and ports (if applicable) to deny"
+  type = list(object({
+    protocol = string
+    ports    = list(string)
+  }))
+  default = null
+}
+
