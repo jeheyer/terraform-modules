@@ -24,5 +24,5 @@ variable "default_cert_arn" {
 variable "ssl_policy_name" {
   type        = string
   description = "AWS SSL Policy for HTTPS Listener"
-  default     = "ELBSecurityPolicy-TLS-1-2-2017-01"
+  default     = "ELBSecurityPolicy-FS-1-2-2019-08"
 }
