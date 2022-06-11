@@ -1,4 +1,4 @@
-resource "aws_lambda_alias" "LAMBDA_ALIAS" {
+resource "aws_lambda_alias" "default" {
   name             = var.name
   description      = var.description
   function_name    = var.function_arn

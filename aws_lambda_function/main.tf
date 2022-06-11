@@ -1,5 +1,5 @@
 # Create Lambda Function
-resource "aws_lambda_function" "LAMBDA_FUNCTION" {
+resource "aws_lambda_function" "default" {
   filename      = var.zipfile_name
   function_name = var.name
   role          = var.iam_role_arn

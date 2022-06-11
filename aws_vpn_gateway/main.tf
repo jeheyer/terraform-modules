@@ -1,7 +1,7 @@
 resource "aws_vpn_gateway" "default" {
-  count  = var.number
-  vpc_id = var.vpc_id
+  vpc_id          = var.vpc_id
+  amazon_side_asn = var.asn
   tags = {
-    Name = coalesce(var.names[count.index], "vgw-${var.vpc_id}-${count.index}")
+    Name = var.name
   }
 }

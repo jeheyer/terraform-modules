@@ -12,6 +12,10 @@ variable "name" {
   type    = string
   default = null
 }
+variable "tier" {
+  type    = string
+  default = null
+}
 variable "tags" {
   type    = map(string)
   default = {}

@@ -4,7 +4,7 @@ variable "num_instances" {
 }
 variable "ami" {
   type    = string
-  default = "ami-0b614a5d911900a9b"
+  default = null
 }
 variable "instance_type" {
   type    = string
@@ -12,7 +12,6 @@ variable "instance_type" {
 }
 variable "eni_ids" {
   type    = list(string)
-  default = []
 }
 variable "key_name" {
   type    = string

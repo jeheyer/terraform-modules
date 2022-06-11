@@ -1,1 +1,1 @@
-output "arn" { value = aws_lb_target_group.ALB_TG.arn }
+output "arn" { value = aws_lb_target_group.default.arn }

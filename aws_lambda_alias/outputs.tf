@@ -1,2 +1,2 @@
-output "arn" { value = aws_lambda_alias.LAMBDA_ALIAS.arn }
-output "name" { value = aws_lambda_alias.LAMBDA_ALIAS.name }
+output "arn" { value = aws_lambda_alias.default.arn }
+output "name" { value = aws_lambda_alias.default.name }

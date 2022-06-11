@@ -1,12 +1,11 @@
 variable "vpc_id" {
   type = string
 }
-variable "number" {
+variable "name" {
+  type    = string
+  default = "vpgw"
+}
+variable "asn" {
   type    = number
-  default = 1
+  default = 64512
 }
-variable "names" {
-  type    = list(string)
-  default = []
-}
-

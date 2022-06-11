@@ -1,10 +1,11 @@
 variable "name" {
   type    = string
+  default = "alb"
 }
 variable "subnet_ids" {
   type = list(string)
 }
-variable "security_groups" {
+variable "security_group_ids" {
   type = list(string)
 }
 variable "type" {

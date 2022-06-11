@@ -1,6 +1,6 @@
 resource "aws_instance" "default" {
   count         = var.num_instances
-  ami           = var.ami
+  ami           = coalesce(var.ami, "ami-0fa49cc9dc8d62c84")
   key_name      = var.key_name
   instance_type = var.instance_type
   network_interface {

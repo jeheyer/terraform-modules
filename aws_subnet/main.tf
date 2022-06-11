@@ -7,5 +7,6 @@ resource "aws_subnet" "default" {
   ipv6_native          = false
   tags = {
     Name = var.name
+    Tier = var.tier
   }
 }
