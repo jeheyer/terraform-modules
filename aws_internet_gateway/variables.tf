@@ -3,5 +3,5 @@ variable "name" {
   default = null
 }
 variable "vpc_id" {
-  type    = string
+  type = string
 }
