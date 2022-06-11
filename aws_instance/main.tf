@@ -7,4 +7,7 @@ resource "aws_instance" "default" {
     network_interface_id = var.eni_ids[count.index]
     device_index         = 0
   }
+  tags = {
+    Name = "${var.naming_prefix}-${count.index}"
+  }
 }

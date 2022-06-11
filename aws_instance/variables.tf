@@ -1,3 +1,7 @@
+variable "naming_prefix" {
+  type = string
+  default = "instance"
+}
 variable "num_instances" {
   type    = number
   default = 1
