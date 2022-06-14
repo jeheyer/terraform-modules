@@ -1,6 +1,6 @@
 resource "aws_vpn_connection" "default" {
-  transit_gateway_id  = var.vpgw_id == null ? var.tgw_id : null
-  vpn_gateway_id      = var.tgw_id == null ? var.vpgw_id : null
+  transit_gateway_id  = var.tgw_id
+  vpn_gateway_id      = var.vpgw_id
   customer_gateway_id = var.cgw_id
   type                = var.type
   static_routes_only  = false

@@ -1,3 +1,1 @@
-output "id" {
-  value = aws_customer_gateway.default.id
-}
+output "id" { value = aws_customer_gateway.default.id }
