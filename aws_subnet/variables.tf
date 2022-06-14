@@ -8,6 +8,10 @@ variable "az" {
   type    = string
   default = null
 }
+variable "az_id" {
+  type    = string
+  default = null
+}
 variable "name" {
   type    = string
   default = null
@@ -15,8 +19,4 @@ variable "name" {
 variable "tier" {
   type    = string
   default = null
-}
-variable "tags" {
-  type    = map(string)
-  default = {}
 }

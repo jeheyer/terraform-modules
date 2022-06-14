@@ -40,7 +40,3 @@ variable "auto_accept" {
   type        = bool
   default     = null
 }
-variable "tags" {
-  type = map(string)
-  default = {}
-}

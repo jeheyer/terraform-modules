@@ -2,10 +2,15 @@ variable "name" {
   type    = string
   default = null
 }
-variable "vpn_gateway_id" {
+variable "tgw_id" {
   type = string
+  default = null
 }
-variable "customer_gateway_id" {
+variable "vpgw_id" {
+  type = string
+  default = null
+}
+variable "cgw_id" {
   type = string
 }
 variable "type" {
