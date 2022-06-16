@@ -2,7 +2,12 @@ variable "vpc_id" {
   type = string
 }
 variable "cidr_block" {
-  type = string
+  type    = string
+  default = null
+}
+variable "ipv6_cidr_block" {
+  type    = string
+  default = null
 }
 variable "az" {
   type    = string
