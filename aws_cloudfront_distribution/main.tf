@@ -12,8 +12,9 @@ resource "aws_cloudfront_distribution" "default" {
   dynamic "origin" {
     for_each = var.origins
     content {
-      origin_id           = origin.key
-      domain_name         = origin.value["bucket_name"] != null ? "${origin.value["bucket_name"]}.s3.amazonaws.com" : origin.value["dns_name"]
+      origin_id = origin.key
+      #domain_name         = origin.value["bucket_name"] != null ? "${origin.value["bucket_name"]}.s3.amazonaws.com" : origin.value["dns_name"]
+      domain_name         = origin.value["bucket_name"] != null ? "${origin.value["bucket_name"]}.s3-website-us-east-1.amazonaws.com" : origin.value["dns_name"]
       origin_path         = origin.value["path"]
       connection_timeout  = 3
       connection_attempts = 2
